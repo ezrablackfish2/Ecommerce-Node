@@ -1,11 +1,15 @@
 import { getUserInfo } from '../localStorage';
+import styles from "./Header.module.css";
 
 const Header = {
   render: () => {
     const { name, isAdmin } = getUserInfo();
     return ` 
   <div class="brand">
-    <a href="/#/">jsamazona</a>
+    <a href="/#/">Ethio Commerce</a>
+  </div>
+  <div>
+	
   </div>
   <div>
   ${

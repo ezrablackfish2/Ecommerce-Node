@@ -3,11 +3,15 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import path from 'path';
-import config from './config';
-import userRouter from './routers/userRouter';
-import orderRouter from './routers/orderRouter';
-import productRouter from './routers/productRouter';
-import uploadRouter from './routers/uploadRouter';
+import config from './config.js';
+import userRouter from './routers/userRouter.js';
+import orderRouter from './routers/orderRouter.js';
+import productRouter from './routers/productRouter.js';
+import uploadRouter from './routers/uploadRouter.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 mongoose
   .connect(config.MONGODB_URL, {

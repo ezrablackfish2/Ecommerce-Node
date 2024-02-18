@@ -1,10 +1,11 @@
 {
   "name": "jsamazona",
   "version": "1.0.0",
-  "description": "JS AMAZONA",
+  "description": "Ethio Zona",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon --watch backend --exec babel-node backend/server.js",
+    "start": "nodemon --watch backend --exec babel-node backend/server.mjs",
     "build": "rm -rf dest && babel backend -d dist",
     "serve": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

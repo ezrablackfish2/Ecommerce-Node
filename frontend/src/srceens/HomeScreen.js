@@ -8,12 +8,14 @@ const HomeScreen = {
     if (products.error) {
       return `<div class="error">${products.error}</div>`;
     }
-
-    return `
+products.map((product) => {
+    console.log(product.name, product.image);
+});    return `
     <ul class="products">
       ${products
         .map(
-          (product) => `
+          (product) =>
+	 `
       <li>
         <div class="product">
           <a href="/#/product/${product._id}">
