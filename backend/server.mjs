@@ -27,7 +27,11 @@ mongoose
     console.log(error.reason);
   });
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://ethio-commerce.onrender.com',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(bodyParser.json());
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
