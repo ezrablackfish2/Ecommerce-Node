@@ -4,7 +4,13 @@ import { getProducts } from '../api';
 
 const HomeScreen = {
   render: async () => {
-    const products = await getProducts();
+    try {
+  const products = await getProducts();
+  // Handle products data
+} catch (error) {
+  console.error('Error fetching products:', error);
+  // Handle the error, e.g., show an error message to the user
+}
     if (products.error) {
       return `<div class="error">${products.error}</div>`;
     }

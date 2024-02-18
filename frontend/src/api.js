@@ -4,20 +4,20 @@ import { getUserInfo } from './localStorage';
 
 export const getProducts = async () => {
   try {
-    const response = await axios({
-      url: `${apiUrl}/api/products`,
+    const response = await fetch(`${apiUrl}/api/products`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    if (response.statusText !== 'OK') {
-      throw new Error(response.data.message);
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.message || 'Failed to fetch products');
     }
-    return response.data;
+    return data;
   } catch (err) {
-    console.log(err);
-    return { error: err.response.data.message || err.message };
+    console.error(err);
+    return { error: err.message };
   }
 };
 
