@@ -14,10 +14,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 mongoose
-  .connect(config.MONGODB_URL, {
+  .connect("mongodb+srv://ezra:tutu@cluster0.x9icmhn.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
   })
   .then(() => {
     console.log('Connected to mongodb.');
