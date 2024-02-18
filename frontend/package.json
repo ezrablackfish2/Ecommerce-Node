@@ -20,5 +20,12 @@
   "dependencies": {
     "axios": "^0.19.2",
     "chartist": "^0.11.4"
+  },
+  "webpack": {
+    "output": {
+      "path": "./build",
+      "filename": "main.js"
+    }
   }
 }
+
