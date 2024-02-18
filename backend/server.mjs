@@ -28,8 +28,8 @@ mongoose
   });
 const app = express();
 app.use(cors({
-  origin: 'https://ethio-commerce.onrender.com',
-  methods: ['GET', 'POST'],
+  origin: 'http://localhost:8080', // Allow requests from this origin
+  methods: ['GET', 'POST'], // Specify allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(bodyParser.json());
